@@ -1,4 +1,4 @@
-require('dotenv').config()
+require('dotenv').config();
 const express = require('express');
 const bodyParser = require('body-parser');
 const bcrypt = require('bcrypt-nodejs');
@@ -12,10 +12,8 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-        host: 'postgresql-animated-96597',
-        user: 'postgres',
-        password: process.env.REACT_APP_DB_PASSWORD,
-        database: 'smart-brain',
+        host: process.env.DATABASE_URL,
+        ssl: true,
     },
 });
 
