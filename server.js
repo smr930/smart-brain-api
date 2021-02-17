@@ -12,7 +12,7 @@ const image = require('./controllers/image');
 const db = knex({
     client: 'pg',
     connection: {
-        host: '127.0.0.1',
+        host: 'postgresql-animated-96597',
         user: 'postgres',
         password: process.env.REACT_APP_DB_PASSWORD,
         database: 'smart-brain',
@@ -52,7 +52,7 @@ app.post('/imageurl', (req, res) => {
 });
 
 app.listen(process.env.PORT || 3000, () => {
-    console.log(`app is running on port ${process.env.PORT}`);
+    console.log(`app is running on port ${process.env.PORT || 3000}`);
 });
 
 /**
